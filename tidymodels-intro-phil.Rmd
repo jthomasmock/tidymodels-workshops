@@ -1215,7 +1215,7 @@ First show our predicted model with compared against our test data.
 
 --
 
-.medium[
+.tiny[
 .pull-left[
 ```{r, echo = FALSE}
 set.seed(20201024)
@@ -1224,14 +1224,8 @@ set.seed(20201024)
 ```{r}
 # Naive Model on Testing Data
 rf_compare_df <- bind_rows(
-  accuracy(
-    pbp_pred_rf, 
-    truth = play_type, .pred_class
-    ),
-  roc_auc(
-    pbp_pred_rf, 
-    truth = play_type, .pred_pass
-    )
+  accuracy(pbp_pred_rf, truth = play_type, .pred_class),
+  roc_auc(pbp_pred_rf, truth = play_type, .pred_pass)
   )
 ```
 
@@ -1243,10 +1237,7 @@ combo_plot <- rf_res %>%
   ggplot(aes(x = .metric, y = .estimate)) +
   geom_jitter(width = 0.2) +
   geom_boxplot(width = 0.3, alpha = 0.5) +
-  geom_point(
-    data = rf_compare_df,
-    color = "red", size = 5
-    )
+  geom_point(data = rf_compare_df,color = "red", size = 5)
 ```
 ]
 
@@ -1363,7 +1354,7 @@ tune_rf_wf <- workflow() %>%
 ]
 
 
-.medium[
+.tiny[
 .pull-right[
 ```{r}
 tune_rf_wf
