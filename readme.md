@@ -2,4 +2,4 @@
 
 [PDF Slides](slides.pdf)
 
-![](cv-folds.png)
+![](cv_folds.png)
